@@ -1,8 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import init, { add } from "wasm-lib";
 
 function App() {
+  init().then(() => {
+    const sum: number = add(1, 2);
+    console.log(sum);
+  });
+
   return (
     <div className="App">
       <header className="App-header">
